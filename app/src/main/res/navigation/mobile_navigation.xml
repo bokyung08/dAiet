@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/home_activity">
+
+    <activity
+        android:id="@+id/home_activity"
+
+        android:label="홈"
+        tools:layout="@layout/activity_home" />
+
+    <activity
+        android:id="@+id/report_activity"
+
+        android:label="리포트"
+        tools:layout="@layout/activity_report" />
+
+    <activity
+        android:id="@+id/mypage_activity"
+        android:label="마이페이지"
+        tools:layout="@layout/activity_mypage" />
+</navigation>

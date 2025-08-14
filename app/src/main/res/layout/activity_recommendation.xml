@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="#F0F5EC"
+    tools:context=".RecommendationActivity">
+
+    <!-- 페이지 제목 -->
+    <TextView
+        android:layout_marginTop="60dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="식단 추천"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#388E3C"
+        android:layout_marginBottom="24dp" />
+
+    <!-- 최근 식단 분석 결과 -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp"
+        app:cardBackgroundColor="@android:color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="최근 식단 분석 결과"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#333333" />
+
+            <TextView
+                android:id="@+id/recommendResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="최근 식단 10개를 분석했어요.\n탄수화물 부족, 지방 과다 경향이 있어요."
+                android:textSize="16sp"
+                android:textColor="#666666" />
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- 추천 식단 목록 (가로 스크롤) -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="이러한 식단을 추천해요"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#388E3C"
+        android:layout_marginBottom="16dp" />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:scrollbarSize="0dp"
+        android:clipToPadding="false"
+        android:paddingStart="4dp"
+        android:paddingEnd="4dp">
+
+        <LinearLayout
+            android:id="@+id/recommendationContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- 추천 식단 카드뷰 (예시) -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:layout_marginEnd="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:scaleType="centerCrop"
+                        android:contentDescription="추천 식단 이미지" />
+                        <!--android:src="@drawable/ic_food_placeholder"-->
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:text="닭가슴살 샐러드"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="#333333" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- 추천 식단 카드뷰 (예시 2) -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:scaleType="centerCrop"
+
+                        android:contentDescription="추천 식단 이미지" />
+                    <!--android:src="@drawable/ic_food_placeholder"-->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:text="단백질 쉐이크"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="#333333" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <!-- 레시피 보러가기 버튼 -->
+    <Button
+        android:id="@+id/viewRecipeButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="레시피 보러가기"
+        android:backgroundTint="#4CAF50"
+        app:cornerRadius="12dp"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+</LinearLayout>
