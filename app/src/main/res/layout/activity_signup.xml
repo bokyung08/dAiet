@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
@@ -14,6 +13,7 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal">
 
+        <!-- 타이틀 -->
         <TextView
             android:layout_marginTop="32dp"
             android:layout_width="wrap_content"
@@ -24,6 +24,7 @@
             android:textColor="#388E3C"
             android:layout_marginBottom="48dp" />
 
+        <!-- 이름 -->
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -38,9 +39,11 @@
                 android:layout_height="wrap_content"
                 android:hint="이름"
                 android:padding="16dp"
+                android:inputType="textPersonName"
                 android:background="@null"/>
         </com.google.android.material.card.MaterialCardView>
 
+        <!-- 이메일 -->
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -59,6 +62,7 @@
                 android:background="@null"/>
         </com.google.android.material.card.MaterialCardView>
 
+        <!-- 비밀번호 -->
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -77,12 +81,55 @@
                 android:background="@null"/>
         </com.google.android.material.card.MaterialCardView>
 
+        <!-- 성별 라디오 -->
+        <TextView
+            android:text="성별"
+            android:textSize="16sp"
+            android:textColor="#388E3C"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="@android:color/white">
+
+            <RadioGroup
+                android:id="@+id/genderGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="12dp">
+
+                <RadioButton
+                    android:id="@+id/rbMale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="남성" />
+
+                <RadioButton
+                    android:id="@+id/rbFemale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="여성"
+                    android:layout_marginStart="24dp" />
+            </RadioGroup>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- 질환/목표 선택 -->
         <TextView
             android:text="dAiet를 통해 관리하고 싶은 식습관"
             android:textSize="16sp"
             android:textColor="#388E3C"
             android:textStyle="bold"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp" />
@@ -95,6 +142,7 @@
             android:rowCount="2"
             android:layout_marginTop="8dp">
 
+            <!-- 체중감량(질환 없음 취급) -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardNone"
                 android:layout_width="0dp"
@@ -103,8 +151,10 @@
                 android:layout_rowWeight="1"
                 android:layout_margin="4dp"
                 app:cardCornerRadius="12dp"
-                app:cardElevation="4dp"
+                app:cardElevation="2dp"
                 app:cardBackgroundColor="@android:color/white"
+                app:strokeWidth="2dp"
+                app:strokeColor="@color/unselected_card_stroke"
                 android:clickable="true"
                 android:focusable="true">
 
@@ -119,6 +169,7 @@
                     android:padding="16dp" />
             </com.google.android.material.card.MaterialCardView>
 
+            <!-- 고혈압 -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardHighbp"
                 android:layout_width="0dp"
@@ -127,8 +178,10 @@
                 android:layout_rowWeight="1"
                 android:layout_margin="4dp"
                 app:cardCornerRadius="12dp"
-                app:cardElevation="4dp"
+                app:cardElevation="2dp"
                 app:cardBackgroundColor="@android:color/white"
+                app:strokeWidth="2dp"
+                app:strokeColor="@color/unselected_card_stroke"
                 android:clickable="true"
                 android:focusable="true">
 
@@ -143,6 +196,7 @@
                     android:padding="16dp" />
             </com.google.android.material.card.MaterialCardView>
 
+            <!-- 당뇨 -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardDiabetes"
                 android:layout_width="0dp"
@@ -151,8 +205,10 @@
                 android:layout_rowWeight="1"
                 android:layout_margin="4dp"
                 app:cardCornerRadius="12dp"
-                app:cardElevation="4dp"
+                app:cardElevation="2dp"
                 app:cardBackgroundColor="@android:color/white"
+                app:strokeWidth="2dp"
+                app:strokeColor="@color/unselected_card_stroke"
                 android:clickable="true"
                 android:focusable="true">
 
@@ -167,6 +223,7 @@
                     android:padding="16dp" />
             </com.google.android.material.card.MaterialCardView>
 
+            <!-- 고지혈증 -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardCholesterol"
                 android:layout_width="0dp"
@@ -175,8 +232,10 @@
                 android:layout_rowWeight="1"
                 android:layout_margin="4dp"
                 app:cardCornerRadius="12dp"
-                app:cardElevation="4dp"
+                app:cardElevation="2dp"
                 app:cardBackgroundColor="@android:color/white"
+                app:strokeWidth="2dp"
+                app:strokeColor="@color/unselected_card_stroke"
                 android:clickable="true"
                 android:focusable="true">
 
@@ -192,12 +251,22 @@
             </com.google.android.material.card.MaterialCardView>
         </GridLayout>
 
+        <!-- 로딩 인디케이터 -->
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_marginTop="16dp" />
+
+        <!-- 회원가입 버튼 -->
         <Button
             android:id="@+id/signupButton"
             android:text="회원가입"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="16dp"
             android:backgroundTint="#DCD0A8"
             app:cornerRadius="12dp"
             android:textColor="@android:color/white"
