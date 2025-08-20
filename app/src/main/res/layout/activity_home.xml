@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="40dp"
         android:layout_marginBottom="24dp"
         android:text="건강한 식습관, \n지금 바로 시작해요"
         android:textColor="#333333"
@@ -23,7 +23,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/mainTitle"
-        android:layout_above="@id/btnChatbot"
         android:layout_marginBottom="24dp"
         android:scrollbarSize="0dp"
         android:clipToPadding="false"
@@ -32,51 +31,41 @@
 
         <LinearLayout
             android:id="@+id/buttonLayout"
-            android:orientation="horizontal"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:gravity="center_vertical">
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
-            <Button
+            <ImageButton
                 android:id="@+id/btnFeedback"
                 android:layout_width="350dp"
-                android:layout_height="match_parent"
+                android:layout_height="550dp"
                 android:layout_marginEnd="20dp"
+                android:backgroundTint="#E8F5E9"
+                android:gravity="center"
+                android:src="@drawable/analyze"
                 android:text="피드백 받기"
-                android:backgroundTint="#4CAF50"
-                app:cornerRadius="16dp"
+                android:scaleType="fitCenter"
                 android:textColor="@android:color/white"
-                android:textStyle="bold"
                 android:textSize="20sp"
-                android:gravity="center" />
+                android:textStyle="bold"
+                app:cornerRadius="16dp" />
 
-            <Button
+            <ImageButton
+                android:scaleType="fitCenter"
+                android:src="@drawable/recommend"
                 android:id="@+id/btnRecommend"
-                android:text="식단 추천 받기"
                 android:layout_width="350dp"
-                android:layout_height="match_parent"
-                android:backgroundTint="#8BC34A"
-                app:cornerRadius="16dp"
+                android:layout_height="550dp"
+                android:backgroundTint="#E8F5E9"
+                android:gravity="center"
+                android:text="식단 추천 받기"
                 android:textColor="@android:color/white"
-                android:textStyle="bold"
                 android:textSize="20sp"
-                android:gravity="center" />
+                android:textStyle="bold"
+                app:cornerRadius="16dp" />
         </LinearLayout>
     </HorizontalScrollView>
 
-    <Button
-        android:id="@+id/btnChatbot"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="60dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        android:text="💬 챗봇 열기"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#2196F3"
-        app:cornerRadius="24dp"
-        android:textColor="@android:color/white"
-        android:textStyle="bold"
-        android:textSize="18sp"/>
+
 </RelativeLayout>

@@ -16,7 +16,7 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
         // 에뮬레이터에서 PC의 로컬호스트 접근은 10.0.2.2
-        buildConfigField("String", "BASE_URL", "\"http://10.0.2.2:8000\"")
+        buildConfigField("String", "BASE_URL", "\"http://10.0.2.2:8000/\"")
     }
 
     buildTypes {

@@ -38,7 +38,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="최근 식단 분석 결과"
+                android:text="최근 5개 식단 분석 결과"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:textColor="#333333" />
@@ -48,7 +48,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="최근 식단 10개를 분석했어요.\n탄수화물 부족, 지방 과다 경향이 있어요."
+                android:text="탄수화물 섭취량이 부족하고,\n나트륨을 평균보다 많이 섭취 했어요"
                 android:textSize="16sp"
                 android:textColor="#666666" />
 
@@ -59,7 +59,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="이러한 식단을 추천해요"
+        android:text="이런 메뉴를 추천해요"
         android:textSize="18sp"
         android:textStyle="bold"
         android:textColor="#388E3C"

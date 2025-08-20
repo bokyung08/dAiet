@@ -22,7 +22,7 @@
         android:layout_marginBottom="24dp"
         android:gravity="center" />
 
-    <!-- 피드백 결과가 표시될 영역 -->
+    <!-- 결과 영역 (스크롤) -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- 사용자가 촬영한 음식 사진을 보여줄 ImageView -->
+            <!-- 음식 사진 -->
             <ImageView
                 android:id="@+id/mealPhoto"
                 android:layout_width="match_parent"
@@ -43,8 +43,51 @@
                 android:background="#DDDDDD"
                 android:layout_marginBottom="24dp"
                 android:contentDescription="사용자가 촬영한 음식 사진" />
+            <!-- 메뉴 분류 결과 카드 -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/classificationCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="@android:color/white">
 
-            <!-- 예시 피드백 항목 1: 칼로리 정보 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="메뉴 인식 결과"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="#333333" />
+
+                    <!-- 분류 결과 아이템들을 동적으로 넣을 컨테이너 -->
+                    <LinearLayout
+                        android:id="@+id/classificationContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginTop="8dp">
+
+                        <!-- 예시 아이템 -->
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="짬뽕 (신뢰도 0.92)"
+                            android:textSize="16sp"
+                            android:textColor="#666666"
+                            android:layout_marginBottom="4dp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- 총 칼로리 카드 -->
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -62,7 +105,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="총 칼로리"
+                        android:text="예상 칼로리"
                         android:textSize="18sp"
                         android:textStyle="bold"
                         android:textColor="#333333" />
@@ -71,7 +114,7 @@
                         android:id="@+id/calorieText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="550 kcal"
+                        android:text="700 kcal"
                         android:textSize="24sp"
                         android:textColor="#4CAF50"
                         android:textStyle="bold"
@@ -79,7 +122,7 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- 예시 피드백 항목 2: 주요 영양소 정보 -->
+            <!-- 주요 영양소 카드 -->
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -102,12 +145,12 @@
                         android:textStyle="bold"
                         android:textColor="#333333" />
 
-                    <!-- 여기에 실제 영양소 분석 결과가 들어갑니다. -->
                     <TextView
                         android:id="@+id/macroText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="탄수화물: 70g, 단백질: 30g, 지방: 20g"
+                        android:text="탄수화물: 120g, 단백질: 30g,
+                                 지방: 18g, 나트륨: 3500mg"
                         android:textSize="16sp"
                         android:textColor="#666666"
                         android:layout_marginTop="8dp" />
@@ -115,7 +158,58 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
+            <!-- 주요 영양소 카드 -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="@android:color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="주요 영양소 분석"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="#333333" />
+
+                    <TextView
+                        android:id="@+id/food"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="탄수화물: 120g, 단백질: 30g,
+                                 지방: 18g, 나트륨: 3500mg"
+                        android:textSize="16sp"
+                        android:textColor="#666666"
+                        android:layout_marginTop="8dp" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+
+
         </LinearLayout>
     </ScrollView>
+
+    <!-- 하단 버튼 (스크롤 영역 밖, 항상 하단) -->
+    <Button
+        android:id="@+id/btnGoHome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="홈 화면으로"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="#DCD0A8"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        app:cornerRadius="12dp" />
 
 </LinearLayout>

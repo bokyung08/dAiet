@@ -48,9 +48,6 @@ class SignupActivity : AppCompatActivity() {
 
                 // 카드 id → 질환 코드 매핑
                 selectedDiseaseKey = mapDiseaseFromCardId(card.id)
-
-                // (참고) 필요하면 카드 안의 텍스트 가져오기
-                // val label = (card.getChildAt(0) as? TextView)?.text?.toString()
             }
         }
 
@@ -59,7 +56,7 @@ class SignupActivity : AppCompatActivity() {
             val email = binding.emailInput.text?.toString()?.trim().orEmpty()
             val password = binding.passwordInput.text?.toString()?.trim().orEmpty()
 
-            // 성별 선택 (라디오 버튼으로 추가해둘 것)
+            // 성별 선택 (RadioGroup 필요: genderGroup / rbMale / rbFemale)
             val gender = when (binding.genderGroup.checkedRadioButtonId) {
                 R.id.rbMale -> "male"
                 R.id.rbFemale -> "female"
@@ -91,8 +88,8 @@ class SignupActivity : AppCompatActivity() {
                     repo.login(email, password)
 
                     // 3) 질환 선택이 있으면 등록
+                    //    ➜ 진단일은 받지 않으므로 아예 보내지 않음(Repo에서 null 필드는 제외하도록 구현했음)
                     selectedDiseaseKey?.let { disease ->
-                        // 백엔드 chronic POST 호출 (이름만 보내도 됨)
                         repo.addChronic(name = disease, details = null, diagnosedAt = null)
                     }
 
@@ -117,10 +114,10 @@ class SignupActivity : AppCompatActivity() {
         // 백엔드 ChronicCondition.name 에 맞는 키값으로 매핑
         // null 이면 "질환 없음"
         return when (id) {
-            R.id.cardNone -> null
-            R.id.cardHighbp -> "hypertension"   // 고혈압
-            R.id.cardDiabetes -> "diabetes"     // 당뇨
-            R.id.cardCholesterol -> "dyslipidemia" // 이상지질혈증(콜레스테롤)
+            R.id.cardNone        -> null
+            R.id.cardHighbp      -> "hypertension"    // 고혈압
+            R.id.cardDiabetes    -> "diabetes"        // 당뇨
+            R.id.cardCholesterol -> "hyperlipidemia"  // 고지혈증(= 이상지질혈증)
             else -> null
         }
     }
