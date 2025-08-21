@@ -42,7 +42,8 @@
                 android:scaleType="centerCrop"
                 android:background="#DDDDDD"
                 android:layout_marginBottom="24dp"
-                android:contentDescription="사용자가 촬영한 음식 사진" />
+                android:contentDescription="사용자가 촬영한 음식 사진"
+                android:src="@drawable/test"/>
             <!-- 메뉴 분류 결과 카드 -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/classificationCard"
@@ -79,7 +80,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="짬뽕 (신뢰도 0.92)"
+                            android:text="닭갈비 (신뢰도 0.92)"
                             android:textSize="16sp"
                             android:textColor="#666666"
                             android:layout_marginBottom="4dp" />
@@ -176,7 +177,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="주요 영양소 분석"
+                        android:text="이런 식재료가 들어간 요리를 먹어보세요"
                         android:textSize="18sp"
                         android:textStyle="bold"
                         android:textColor="#333333" />
@@ -185,8 +186,7 @@
                         android:id="@+id/food"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="탄수화물: 120g, 단백질: 30g,
-                                 지방: 18g, 나트륨: 3500mg"
+                        android:text="아몬드,땅콩 등 견과류 \n 등푸른 생선"
                         android:textSize="16sp"
                         android:textColor="#666666"
                         android:layout_marginTop="8dp" />

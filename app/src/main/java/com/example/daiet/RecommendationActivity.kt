@@ -113,4 +113,5 @@ class RecommendationActivity : AppCompatActivity() {
     private fun Int.dpToPx(): Int {
         return (this * resources.displayMetrics.density).toInt()
     }
+
 }

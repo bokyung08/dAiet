@@ -98,7 +98,8 @@
                         android:layout_height="0dp"
                         android:layout_weight="1"
                         android:scaleType="centerCrop"
-                        android:contentDescription="추천 식단 이미지" />
+                        android:contentDescription="추천 식단 이미지"
+                        android:src="@drawable/recommend1"/>
                         <!--android:src="@drawable/ic_food_placeholder"-->
 
 
@@ -106,7 +107,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="8dp"
-                        android:text="닭가슴살 샐러드"
+                        android:text="고등어 구이"
+                        android:layout_marginLeft="10dp"
                         android:textSize="16sp"
                         android:textStyle="bold"
                         android:textColor="#333333" />
@@ -130,14 +132,16 @@
                         android:layout_height="0dp"
                         android:layout_weight="1"
                         android:scaleType="centerCrop"
+                        android:src="@drawable/recommend2"
+                        android:contentDescription="추천 식단 이미지"
+                        />
 
-                        android:contentDescription="추천 식단 이미지" />
-                    <!--android:src="@drawable/ic_food_placeholder"-->
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="8dp"
-                        android:text="단백질 쉐이크"
+                        android:text="샐러드 볼"
+                        android:layout_marginLeft="10dp"
                         android:textSize="16sp"
                         android:textStyle="bold"
                         android:textColor="#333333" />

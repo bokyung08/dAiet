@@ -17,9 +17,11 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".ui.FeedbackResultActivity"
+            android:name=".AnalyzingActivity"
             android:exported="false" />
-        <!-- SplashActivity가 앱의 시작점이 됩니다. -->
+        <activity
+            android:name=".ui.FeedbackResultActivity"
+            android:exported="false" /> <!-- SplashActivity가 앱의 시작점이 됩니다. -->
         <activity
             android:name=".SplashActivity"
             android:exported="true">
@@ -31,7 +33,7 @@
         </activity> <!-- LoginActivity의 intent-filter를 제거합니다. -->
         <activity
             android:name=".LoginActivity"
-            android:exported="false"></activity> <!-- 나머지 액티비티들은 그대로 유지됩니다. -->
+            android:exported="false" /> <!-- 나머지 액티비티들은 그대로 유지됩니다. -->
         <activity
             android:name=".MypageActivity"
             android:exported="false" />

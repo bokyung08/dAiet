@@ -18,14 +18,13 @@ class HomeActivity : AppCompatActivity() {
         }
 
         binding.btnRecommend.setOnClickListener {
-            // TODO: 식단 추천 액티비티로 이동
-            startActivity(Intent(this, RecommendationActivity::class.java))
+            val intent = Intent(this, AnalyzingActivity::class.java).apply {
+                putExtra(AnalyzingActivity.EXTRA_NEXT, "recommend") // ← 문자열 키로 전달
+            }
+            startActivity(intent)
         }
 
-        binding.btnChatbot.setOnClickListener {
-            // TODO: 챗봇 UI 호출 (예: BottomSheetDialogFragment)
-            val chatbot = ChatbotFragment()
-            chatbot.show(supportFragmentManager, "Chatbot")
-        }
+
+
     }
 }
